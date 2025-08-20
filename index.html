@@ -1,58 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ultimate Game Portal</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #111;
-      color: #fff;
-    }
-    header {
-      background-color: #1a1a1a;
-      padding: 20px;
-      text-align: center;
-      font-size: 2em;
-      font-weight: bold;
-    }
-    #search {
-      display: block;
-      width: 80%;
-      max-width: 500px;
-      margin: 20px auto;
-      padding: 10px;
-      font-size: 1em;
-      border-radius: 5px;
-      border: none;
-    }
-    .game-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-      padding: 20px;
-    }
-    .game-card {
-      background-color: #222;
-      border-radius: 10px;
-      cursor: pointer;
-      padding: 10px;
-      text-align: center;
-      transition: 0.2s;
-    }
-    .game-card:hover {
-      background-color: #333;
-    }
-    #game-player {
-      width: 100%;
-      height: 600px;
-      border: none;
-      display: block;
-      margin-top: 20px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ultimate Game Portal</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: #fff;
+  }
+  header {
+    background-color: #1a1a1a;
+    padding: 20px;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+  }
+  #search {
+    display: block;
+    width: 80%;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: none;
+  }
+  .game-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px;
+  }
+  .game-card {
+    background-color: #222;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 15px;
+    text-align: center;
+    transition: 0.2s;
+  }
+  .game-card:hover {
+    background-color: #333;
+  }
+  #game-player {
+    width: 100%;
+    height: 700px;
+    border: none;
+    display: block;
+    margin-top: 20px;
+  }
+</style>
 </head>
 <body>
 
@@ -60,51 +60,45 @@
 <input type="text" id="search" placeholder="Search for games...">
 
 <div class="game-container" id="games">
-
-  <!-- Example of embedded games with click-to-play -->
+  <!-- Example embedded games -->
   <div class="game-card" data-title="Deer Adventure" data-src="https://www.gamenora.com/embed/deer-adventure">
     Deer Adventure
   </div>
-
   <div class="game-card" data-title="Marble Blast Ultra" data-src="https://marbleblastultra.randomityguy.me">
     Marble Blast Ultra
   </div>
-
   <div class="game-card" data-title="Superhot" data-src="../d4b259d1-cd08-44ae-b2d2-fc3981b58fca/content/m.igroblox.ru/ngm/super-khot/index.html">
     Superhot
   </div>
-
   <div class="game-card" data-title="EagleCraft" data-src="https://eaglecraft.pages.dev">
     EagleCraft
   </div>
-
-  <!-- Add more games here as more <div class="game-card"> elements with data-src as the embedded code link -->
-
+  <!-- Add all other actual HTML5 game embed links here -->
 </div>
 
 <!-- Click-to-play iframe -->
 <iframe id="game-player" allowfullscreen></iframe>
 
 <script>
-  const searchInput = document.getElementById('search');
-  const gameCards = document.querySelectorAll('.game-card');
-  const player = document.getElementById('game-player');
+const searchInput = document.getElementById('search');
+const gameCards = document.querySelectorAll('.game-card');
+const player = document.getElementById('game-player');
 
-  // Click-to-play functionality
+// Click-to-play: load the game iframe
+gameCards.forEach(card => {
+  card.addEventListener('click', () => {
+    player.src = card.dataset.src;
+  });
+});
+
+// Search filter
+searchInput.addEventListener('input', () => {
+  const query = searchInput.value.toLowerCase();
   gameCards.forEach(card => {
-    card.addEventListener('click', () => {
-      player.src = card.dataset.src;
-    });
+    const title = card.dataset.title.toLowerCase();
+    card.style.display = title.includes(query) ? 'block' : 'none';
   });
-
-  // Search filter
-  searchInput.addEventListener('input', () => {
-    const query = searchInput.value.toLowerCase();
-    gameCards.forEach(card => {
-      const title = card.dataset.title.toLowerCase();
-      card.style.display = title.includes(query) ? 'block' : 'none';
-    });
-  });
+});
 </script>
 
 </body>
