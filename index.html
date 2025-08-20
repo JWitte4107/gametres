@@ -30,20 +30,27 @@
     }
     .game-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
       padding: 20px;
     }
-    .game {
+    .game-card {
       background-color: #222;
       border-radius: 10px;
-      overflow: hidden;
-      height: 400px;
+      cursor: pointer;
+      padding: 10px;
+      text-align: center;
+      transition: 0.2s;
     }
-    .game iframe {
+    .game-card:hover {
+      background-color: #333;
+    }
+    #game-player {
       width: 100%;
-      height: 100%;
+      height: 600px;
       border: none;
+      display: block;
+      margin-top: 20px;
     }
   </style>
 </head>
@@ -54,272 +61,48 @@
 
 <div class="game-container" id="games">
 
-  <!-- 1. Deer Adventure -->
-  <div class="game" data-title="Deer Adventure">
-    <iframe src="https://www.gamenora.com/embed/deer-adventure" allowfullscreen></iframe>
+  <!-- Example of embedded games with click-to-play -->
+  <div class="game-card" data-title="Deer Adventure" data-src="https://www.gamenora.com/embed/deer-adventure">
+    Deer Adventure
   </div>
 
-  <!-- 2. Marble Blast Ultra -->
-  <div class="game" data-title="Marble Blast Ultra">
-    <iframe src="https://marbleblastultra.randomityguy.me" allowfullscreen></iframe>
+  <div class="game-card" data-title="Marble Blast Ultra" data-src="https://marbleblastultra.randomityguy.me">
+    Marble Blast Ultra
   </div>
 
-  <!-- 3. Om Nom Run -->
-  <div class="game" data-title="Om Nom Run">
-    <iframe src="https://html5games.com/embed/om-nom-run" allowfullscreen></iframe>
+  <div class="game-card" data-title="Superhot" data-src="../d4b259d1-cd08-44ae-b2d2-fc3981b58fca/content/m.igroblox.ru/ngm/super-khot/index.html">
+    Superhot
   </div>
 
-  <!-- 4. Garden Bloom -->
-  <div class="game" data-title="Garden Bloom">
-    <iframe src="https://html5games.com/embed/garden-bloom" allowfullscreen></iframe>
+  <div class="game-card" data-title="EagleCraft" data-src="https://eaglecraft.pages.dev">
+    EagleCraft
   </div>
 
-  <!-- 5. Bubble Tower 3D -->
-  <div class="game" data-title="Bubble Tower 3D">
-    <iframe src="https://html5games.com/embed/bubble-tower-3d" allowfullscreen></iframe>
-  </div>
-
-  <!-- 6. Cannon Balls 3D -->
-  <div class="game" data-title="Cannon Balls 3D">
-    <iframe src="https://html5games.com/embed/cannon-balls-3d" allowfullscreen></iframe>
-  </div>
-
-  <!-- 7. Tower Crash 3D -->
-  <div class="game" data-title="Tower Crash 3D">
-    <iframe src="https://html5games.com/embed/tower-crash-3d" allowfullscreen></iframe>
-  </div>
-
-  <!-- 8. Element Blocks -->
-  <div class="game" data-title="Element Blocks">
-    <iframe src="https://html5games.com/embed/element-blocks" allowfullscreen></iframe>
-  </div>
-
-  <!-- 9. Zoo Boom -->
-  <div class="game" data-title="Zoo Boom">
-    <iframe src="https://html5games.com/embed/zoo-boom" allowfullscreen></iframe>
-  </div>
-
-  <!-- 10. Moto X3M Pool Party -->
-  <div class="game" data-title="Moto X3M Pool Party">
-    <iframe src="https://html5games.com/embed/moto-x3m-pool-party" allowfullscreen></iframe>
-  </div>
-
-  <!-- 11. Bubble Woods -->
-  <div class="game" data-title="Bubble Woods">
-    <iframe src="https://html5games.com/embed/bubble-woods" allowfullscreen></iframe>
-  </div>
-
-  <!-- 12. 3D Free Kick -->
-  <div class="game" data-title="3D Free Kick">
-    <iframe src="https://html5games.com/embed/3d-free-kick" allowfullscreen></iframe>
-  </div>
-
-  <!-- 13. 8 Ball Billiards Classic -->
-  <div class="game" data-title="8 Ball Billiards Classic">
-    <iframe src="https://html5games.com/embed/8-ball-billiards-classic" allowfullscreen></iframe>
-  </div>
-
-  <!-- 14. Archery World Tour -->
-  <div class="game" data-title="Archery World Tour">
-    <iframe src="https://html5games.com/embed/archery-world-tour" allowfullscreen></iframe>
-  </div>
-
-  <!-- 15. Totemia: Cursed Marbles -->
-  <div class="game" data-title="Totemia: Cursed Marbles">
-    <iframe src="https://html5games.com/embed/totemia-cursed-marbles" allowfullscreen></iframe>
-  </div>
-
-  <!-- 16. Table Tennis World Tour -->
-  <div class="game" data-title="Table Tennis World Tour">
-    <iframe src="https://html5games.com/embed/table-tennis-world-tour" allowfullscreen></iframe>
-  </div>
-
-  <!-- 17. Solitaire Klondike -->
-  <div class="game" data-title="Solitaire Klondike">
-    <iframe src="https://html5games.com/embed/solitaire-klondike" allowfullscreen></iframe>
-  </div>
-
-  <!-- 18. Onet Connect Classic -->
-  <div class="game" data-title="Onet Connect Classic">
-    <iframe src="https://html5games.com/embed/onet-connect-classic" allowfullscreen></iframe>
-  </div>
-
-  <!-- 19. Teeth Runner -->
-  <div class="game" data-title="Teeth Runner">
-    <iframe src="https://html5games.com/embed/teeth-runner" allowfullscreen></iframe>
-  </div>
-
-  <!-- 20. Om Nom Tower 3D -->
-  <div class="game" data-title="Om Nom Tower 3D">
-    <iframe src="https://html5games.com/embed/om-nom-tower-3d" allowfullscreen></iframe>
-  </div>
-
-  <!-- 21. Giant Rush -->
-  <div class="game" data-title="Giant Rush">
-    <iframe src="https://html5games.com/embed/giant-rush" allowfullscreen></iframe>
-  </div>
-
-  <!-- 22. Rise Up -->
-  <div class="game" data-title="Rise Up">
-    <iframe src="https://html5games.com/embed/rise-up" allowfullscreen></iframe>
-  </div>
-
-  <!-- 23. Train Miner -->
-  <div class="game" data-title="Train Miner">
-    <iframe src="https://html5games.com/embed/train-miner" allowfullscreen></iframe>
-  </div>
-
-  <!-- 24. Western Sniper -->
-  <div class="game" data-title="Western Sniper">
-    <iframe src="https://html5games.com/embed/western-sniper" allowfullscreen></iframe>
-  </div>
-
-  <!-- 25. Go Escape -->
-  <div class="game" data-title="Go Escape">
-    <iframe src="https://html5games.com/embed/go-escape" allowfullscreen></iframe>
-  </div>
-
-  <!-- 26. Canabalt -->
-  <div class="game" data-title="Canabalt">
-    <iframe src="https://html5games.com/embed/canabalt" allowfullscreen></iframe>
-  </div>
-
-  <!-- 27. Fieldrunners -->
-  <div class="game" data-title="Fieldrunners">
-    <iframe src="https://html5games.com/embed/fieldrunners" allowfullscreen></iframe>
-  </div>
-
-  <!-- 28. BrowserQuest -->
-  <div class="game" data-title="BrowserQuest">
-    <iframe src="https://html5games.com/embed/browserquest" allowfullscreen></iframe>
-  </div>
-
-  <!-- 29. Launchball -->
-  <div class="game" data-title="Launchball">
-    <iframe src="https://html5games.com/embed/launchball" allowfullscreen></iframe>
-  </div>
-
-  <!-- 30. IncrediBots -->
-  <div class="game" data-title="IncrediBots">
-    <iframe src="https://html5games.com/embed/incredibots" allowfullscreen></iframe>
-  </div>
-
-  <!-- 31. Subway Surfers -->
-  <div class="game" data-title="Subway Surfers">
-    <iframe src="https://html5games.com/embed/subway-surfers" allowfullscreen></iframe>
-  </div>
-
-  <!-- 32. Temple Run 2 -->
-  <div class="game" data-title="Temple Run 2">
-    <iframe src="https://html5games.com/embed/temple-run-2" allowfullscreen></iframe>
-  </div>
-
-  <!-- 33. Stickman Hook -->
-  <div class="game" data-title="Stickman Hook">
-    <iframe src="https://html5games.com/embed/stickman-hook" allowfullscreen></iframe>
-  </div>
-
-  <!-- 34. 2048 -->
-  <div class="game" data-title="2048">
-    <iframe src="https://html5games.com/embed/2048" allowfullscreen></iframe>
-  </div>
-
-  <!-- 35. Basketball Stars -->
-  <div class="game" data-title="Basketball Stars">
-    <iframe src="https://html5games.com/embed/basketball-stars" allowfullscreen></iframe>
-  </div>
-
-  <!-- 36. Superhot -->
-  <div class="game" data-title="Superhot">
-    <iframe src="../d4b259d1-cd08-44ae-b2d2-fc3981b58fca/content/m.igroblox.ru/ngm/super-khot/index.html" style="width:100%; height:100%;" allowfullscreen></iframe>
-  </div>
-
-  <!-- 37. Shell Shockers -->
-  <div class="game" data-title="Shell Shockers">
-    <iframe src="https://shellshock.io" allowfullscreen></iframe>
-  </div>
-
-  <!-- 38. Sprunki Phase 5 -->
-  <div class="game" data-title="Sprunki Phase 5">
-    <iframe src="https://gameflare.com/play/sprunki-phase-5-original/" allowfullscreen></iframe>
-  </div>
-
-  <!-- 39. Melon Sandbox -->
-  <div class="game" data-title="Melon Sandbox">
-    <iframe src="https://gameflare.com/play/melon-sandbox/" allowfullscreen></iframe>
-  </div>
-
-  <!-- 40. Geometry Dash Lite -->
-  <div class="game" data-title="Geometry Dash Lite">
-    <iframe src="https://gameflare.com/play/geometry-dash-lite/" allowfullscreen></iframe>
-  </div>
-
-  <!-- 41. Monopoly Online -->
-  <div class="game" data-title="Monopoly Online">
-    <iframe src="https://gameflare.com/play/monopoly-online/" allowfullscreen></iframe>
-  </div>
-
-  <!-- 42. Sprunki Phase 10 -->
-  <div class="game" data-title="Sprunki Phase 10">
-    <iframe src="https://gameflare.com/play/sprunki-phase-10/" allowfullscreen></iframe>
-  </div>
-
-  <!-- 43. Sprunki Phase 3 -->
-  <div class="game" data-title="Sprunki Phase 3">
-    <iframe src="https://gameflare.com/play/sprunki-phase-3/" allowfullscreen></iframe>
-  </div>
-
-  <!-- 44. Stickman Destruction -->
-  <div class="game" data-title="Stickman Destruction">
-    <iframe src="https://onlinegames.io/t/stickman-destruction/" allowfullscreen></iframe>
-  </div>
-
-  <!-- 45. Geometry Dash FreezeNova -->
-  <div class="game" data-title="Geometry Dash FreezeNova">
-    <iframe src="https://onlinegames.io/t/geometry-dash-freezenova/" allowfullscreen></iframe>
-  </div>
-
-  <!-- 46. Dinosaur Game -->
-  <div class="game" data-title="Dinosaur Game">
-    <iframe src="https://onlinegames.io/t/dinosaur-game/" allowfullscreen></iframe>
-  </div>
-
-  <!-- 47. Stack Fire Ball -->
-  <div class="game" data-title="Stack Fire Ball">
-    <iframe src="https://onlinegames.io/t/stack-fire-ball/" allowfullscreen></iframe>
-  </div>
-
-  <!-- 48. Angry Birds -->
-  <div class="game" data-title="Angry Birds">
-    <iframe src="https://funhtml5games.com/angry-birds/" allowfullscreen></iframe>
-  </div>
-
-  <!-- 49. Bomberman HTML5 -->
-  <div class="game" data-title="Bomberman HTML5">
-    <iframe src="https://funhtml5games.com/bomberman-html5/" allowfullscreen></iframe>
-  </div>
-
-  <!-- 50. 3D Pinball: Space Cadet -->
-  <div class="game" data-title="3D Pinball: Space Cadet">
-    <iframe src="https://funhtml5games.com/3d-pinball-space-cadet/" allowfullscreen></iframe>
-  </div>
-
-  <!-- 51. EagleCraft -->
-  <div class="game" data-title="EagleCraft">
-    <iframe src="https://eaglecraft.pages.dev" style="width:100%; height:100%;" allowfullscreen></iframe>
-  </div>
+  <!-- Add more games here as more <div class="game-card"> elements with data-src as the embedded code link -->
 
 </div>
 
+<!-- Click-to-play iframe -->
+<iframe id="game-player" allowfullscreen></iframe>
+
 <script>
   const searchInput = document.getElementById('search');
-  const games = document.querySelectorAll('.game');
+  const gameCards = document.querySelectorAll('.game-card');
+  const player = document.getElementById('game-player');
 
+  // Click-to-play functionality
+  gameCards.forEach(card => {
+    card.addEventListener('click', () => {
+      player.src = card.dataset.src;
+    });
+  });
+
+  // Search filter
   searchInput.addEventListener('input', () => {
     const query = searchInput.value.toLowerCase();
-    games.forEach(game => {
-      const title = game.dataset.title.toLowerCase();
-      game.style.display = title.includes(query) ? 'block' : 'none';
+    gameCards.forEach(card => {
+      const title = card.dataset.title.toLowerCase();
+      card.style.display = title.includes(query) ? 'block' : 'none';
     });
   });
 </script>
